@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Cairn",
+    "file": "cairn.svg",
+    "rationale": "A cairn is a stack of stones left by earlier walkers to mark the route (English, from Scottish Gaelic 'carn', a heap of stones); alumni are the people who went ahead and left markers you can follow.",
+    "conflicts": "Known: 'Cairn' is a climbing video game by The Game Bakers, and Cairn Energy was a UK oil company (since renamed Capricorn Energy). No alumni or networking product by this name that I know of, but not checked; trademarks not verified.",
+    "idea": "Three hand-stacked stones, slightly off-centre from each other, forming a trail marker."
+  },
+  {
+    "name": "Wend",
+    "file": "wend.svg",
+    "rationale": "To wend is to make your way somewhere, usually by an indirect route (Old English 'wendan', to turn or go; the source of 'went'); it names the path from you to a person through the clubs, labs and employers in between.",
+    "conflicts": "Not checked. I know of no prominent product called Wend. 'Wends' is also a historical name for Slavic peoples in Germany, which is unrelated but worth knowing. Trademarks not verified.",
+    "idea": "A winding route from a solid dot (you) to an open ring (the alum you are trying to reach)."
+  },
+  {
+    "name": "Waggle",
+    "file": "waggle.svg",
+    "rationale": "The waggle dance is how a honeybee tells its hive-mates the direction and distance of something worth finding; here you ask, and the app points you to the right person on the globe. (Honeybees do this, not yellow jackets, so the link to Tech's mascot is by association only.)",
+    "conflicts": "Crowded. I am aware of Waggle, an adaptive-learning product for schools from HMH; a Waggle AI assistant for managers; and Waggle-named golf apparel and pet-monitoring products. Details from memory, not checked; trademarks not verified.",
+    "idea": "A globe whose tilted axis is a zigzag waggle run, so the circle reads both as the world and as the two return loops of the bee's dance."
+  },
+  {
+    "name": "Thrum",
+    "file": "thrum.svg",
+    "rationale": "A thrum is a low steady hum, like a hive at work or a plucked string (English, imitative); in weaving, thrums are also the loose thread ends left on a loom, which suits a tool that ties loose ends between people.",
+    "conflicts": "Not checked. I do not know of a prominent software product called Thrum, but it is a real word and small brands likely use it. Trademarks not verified.",
+    "idea": "A string stretched between two people and drawn mid-vibration: the resting line plus its upper and lower swing."
+  }
+]

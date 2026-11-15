@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill="currentColor" fill-rule="evenodd" d="M24 28 H40 V50 H35 V58 H29 V50 H24 Z M28 35 H36 V40 H28 Z"/>
+  <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+    <line x1="32" y1="21" x2="32" y2="9"/>
+    <line x1="22" y1="23" x2="13" y2="13"/>
+    <line x1="42" y1="23" x2="51" y2="13"/>
+  </g>
+</svg>

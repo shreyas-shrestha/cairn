@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Burdell",
+    "file": "burdell.svg",
+    "rationale": "George P. Burdell is the alum who has been in every class, club and company, so \"ask Burdell\" is the natural way to say \"ask the whole alumni body\".",
+    "conflicts": "The Burdell name is already used on campus (a campus store is called Burdell's, and the name appears on many student-run things). Whether Georgia Tech holds a registration on \"George P. Burdell\" is not checked. No large outside tech product by this name that I know of; not checked.",
+    "idea": "A head-and-shoulders figure whose head is a solid ring and whose shoulders are a broken arc: the person who is on every roster but never quite there."
+  },
+  {
+    "name": "Whistle",
+    "file": "whistle.svg",
+    "rationale": "The steam whistle is how Tech calls everyone at once; the app lets one student send a call that the right alumni hear.",
+    "conflicts": "Known clashes: Whistle (pet GPS trackers, owned by Mars Petcare) and Whistle (sports media company). The plain word is crowded as a product name and a clean domain is unlikely. Trademark status not checked.",
+    "idea": "An upright steam whistle on its pipe with three blasts of steam fanning out from the top, a single call reaching out in several directions."
+  },
+  {
+    "name": "Northave",
+    "file": "northave.svg",
+    "rationale": "North Avenue is the street every Tech graduate started from (the \"North Avenue Trade School\"), so it names the shared starting point of every path the app draws.",
+    "conflicts": "\"North Ave\" is used on campus for the North Avenue apartments and dining hall, and \"North Avenue\" is a common street and business name in many cities. No specific software product known to me; not checked.",
+    "idea": "A street-grid route running from a filled dot (you, on North Avenue) around a block corner to an open ring (the alum you are trying to reach)."
+  },
+  {
+    "name": "Ratcap",
+    "file": "ratcap.svg",
+    "rationale": "The RAT cap is the gold freshman cap you fill in with what you learn at Tech; the app is where a new student starts filling in who they know.",
+    "conflicts": "No product by this name known to me; not checked. Georgia Tech and its alumni association sell and promote RAT caps, so the term is closely tied to official tradition even though the name itself claims no endorsement. \"Rat\" reads badly to anyone outside Tech.",
+    "idea": "A side-on freshman cap: a round crown with a button on top sitting above a separate upturned brim band, the place a new student writes things down."
+  }
+]

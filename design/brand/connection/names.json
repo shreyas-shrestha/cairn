@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Mutual",
+    "file": "mutual.svg",
+    "rationale": "Names the exact thing the product finds: the person, club, lab or employer you and an alum have in common, which is what makes the introduction warm.",
+    "conflicts": "Mutual is an existing dating app (LDS-focused), and 'mutual' is a generic word in insurance and finance company names (e.g. Liberty Mutual, Mutual of Omaha). 'Mutuals' is also common social-media slang. Domains and trademarks not checked.",
+    "idea": "Two overlapping circle outlines, you and the alum, with the shared lens between them filled solid to stand for the person or group you both know."
+  },
+  {
+    "name": "Waypoint",
+    "file": "waypoint.svg",
+    "rationale": "A waypoint is the stop in the middle of a route; here it is the labmate or clubmate you pass through to reach the person you actually want to meet.",
+    "conflicts": "Heavily used: HashiCorp Waypoint (developer tool), Waypoint (Vice's gaming outlet), and various navigation, travel and consulting firms. Trademarks and domains not checked.",
+    "idea": "A route arc running from one dot to another, with a solid diamond marker sitting on the top of the arc as the middle person the route passes through."
+  },
+  {
+    "name": "Greatcircle",
+    "file": "greatcircle.svg",
+    "rationale": "A great circle is the shortest route between two points on a globe, which matches the product's globe view and its promise of the shortest path to an alum anywhere.",
+    "conflicts": "Great Circle is a well-known 2021 novel by Maggie Shipstead, and Great Circle Mapper is a flight-route mapping site; 'Indiana Jones and the Great Circle' is a 2024 video game. Other software or company uses not checked; trademarks and domains not checked.",
+    "idea": "A globe outline crossed by a single tilted great-circle arc, with two solid dots on the arc marking the two people at either end of the route."
+  },
+  {
+    "name": "Vouch",
+    "file": "vouch.svg",
+    "rationale": "A warm introduction is someone vouching for you; the word is short, sayable and says why a note sent through a shared connection gets answered.",
+    "conflicts": "Several existing companies: Vouch (business insurance for startups), Vouch (video testimonial / recruiting tool) and Vouch-branded digital identity products. Crowded name; trademarks and domains not checked.",
+    "idea": "A check mark that starts at a solid dot (you), turns at its corner (the person vouching) and ends at an open ring (the alum you are being introduced to)."
+  }
+]
