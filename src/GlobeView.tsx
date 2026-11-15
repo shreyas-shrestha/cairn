@@ -93,7 +93,7 @@ export default function GlobeView({ cities, active, focus, stops, onCity }: Prop
     return () => window.removeEventListener('resize', on)
   }, [])
 
-  const material = useMemo(() => new MeshBasicMaterial({ color: '#fbe3a6' }), [])
+  const material = useMemo(() => new MeshBasicMaterial({ color: '#f7d68a' }), [])
 
   const markers = useMemo(() => {
     const scale = phone ? 0.62 : 1
@@ -228,24 +228,29 @@ export default function GlobeView({ cities, active, focus, stops, onCity }: Prop
   const farRef = useRef(far)
   farRef.current = far
   const top = markers[0]?.name
+  // Where the camera sits for the open profile's route, if there is one.
+  const routeView = useMemo(() => {
+    if (!stops.length) return null
+    // Room for the furthest stop: half the space between the sheets (or the
+    // phone's globe band), less room for the chip that names it.
+    const free = phone ? size.w : size.w - 892
+    return frame(stops.map((s) => s.city), {
+      height,
+      reachX: Math.max(50, free / 2 - 80),
+      reachY: Math.max(40, height / 2 - 42),
+      nearest: phone ? 2 : 1.2,
+    })
+  }, [stops, phone, size.w, height])
+
   useEffect(() => {
-    if (stops.length) {
-      // Room for the furthest stop: half the space between the sheets (or the
-      // phone's globe band), less room for the chip that names it.
-      const free = phone ? size.w : size.w - 892
-      const view = frame(stops.map((s) => s.city), {
-        height,
-        reachX: Math.max(50, free / 2 - 80),
-        reachY: Math.max(40, height / 2 - 42),
-        nearest: phone ? 2 : 1.2,
-      })
-      look(view, view.altitude, 1000)
+    if (routeView) {
+      look(routeView, routeView.altitude, 1000)
       return
     }
     const target = active && top ? CITY_BY_NAME.get(top) : HOME
     if (target) look(target, far, 1000)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stops, active, top, far, height, size.w])
+  }, [routeView, active, top, far])
 
   const makeMarker = useCallback((d: object) => {
     const m = d as { name: string; count: number; label: string; rank: number; size: number; lat: number; lng: number }
@@ -302,7 +307,7 @@ export default function GlobeView({ cities, active, focus, stops, onCity }: Prop
         polygonStrokeColor={strokeColor}
         arcsData={arcs}
         arcColor={arcColor}
-        arcStroke={0.55}
+        arcStroke={routeView ? 0.2 * (1 + routeView.altitude) : 0.5}
         arcAltitudeAutoScale={0.35}
         htmlElementsData={markers}
         htmlAltitude={0.012}

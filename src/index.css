@@ -109,6 +109,10 @@ button {
   pointer-events: none;
 }
 
+.top svg {
+  color: var(--ink);
+}
+
 .top strong {
   font-family: var(--display);
   font-size: 1.4rem;
@@ -133,7 +137,6 @@ button {
   border-radius: var(--box);
   border: 1px solid var(--line-strong);
   background: var(--surface);
-  box-shadow: 0 10px 30px rgba(42, 29, 18, 0.08);
   animation: sheet-in 240ms ease both;
 }
 
@@ -286,8 +289,8 @@ h2 {
 
 .seg button {
   position: relative;
-  min-height: 2rem;
-  padding: 0.2rem 0.8rem;
+  min-height: 2.25rem;
+  padding: 0.3rem 0.85rem;
   border: 1px solid var(--line-ui);
   border-radius: var(--pill);
   background: var(--surface);
@@ -313,6 +316,14 @@ h2 {
   border-color: var(--ink);
 }
 
+.seg button:active {
+  background: var(--honey-soft);
+}
+
+.seg button.on:active {
+  background: var(--ink-hover);
+}
+
 .seg button.on {
   background: var(--ink);
   border-color: var(--ink);
@@ -336,10 +347,14 @@ h2 {
 }
 
 .link:hover,
-.link:active,
-.text-btn:hover,
-.text-btn:active {
+.text-btn:hover {
   color: var(--honey-deep);
+}
+
+.link:active,
+.text-btn:active {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
 }
 
 /* ---------- search ---------- */
@@ -402,7 +417,7 @@ kbd {
   margin-right: 8px;
   min-width: 24px;
   padding: 1px 7px;
-  border-radius: 6px;
+  border-radius: var(--box);
   border: 1px solid var(--line-strong);
   background: var(--panel);
   font: inherit;
@@ -451,8 +466,17 @@ kbd {
 
 /* ---------- home ---------- */
 
+/* The greeting and search stay put; a rule marks where the list scrolls under them. */
+.search:has(+ .home) {
+  border-bottom: 1px solid var(--line-strong);
+}
+
 .home {
   padding: 0 20px 20px;
+}
+
+.home section:first-child {
+  border-top: 0;
 }
 
 /* A section sits on the sheet with a rule above it instead of a box. */
@@ -598,9 +622,12 @@ kbd {
   transition: color 0.12s ease;
 }
 
-.tabs button:hover,
-.tabs button:active {
+.tabs button:hover {
   color: var(--ink);
+}
+
+.tabs button:active {
+  color: var(--honey-deep);
 }
 
 .tabs button.on {
@@ -630,7 +657,8 @@ kbd {
 
 .person {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
   width: 100%;
   padding: 10px;
   border-radius: var(--box);
@@ -648,6 +676,42 @@ kbd {
   box-shadow: inset 0 0 0 1.5px var(--ink);
 }
 
+.stone {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 27px;
+  margin-top: 2px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--surface);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  rotate: -5deg;
+  transition: rotate 0.2s ease;
+}
+
+.people li:nth-child(even) .stone {
+  rotate: 4deg;
+}
+
+.stone.near {
+  background: var(--honey);
+}
+
+.person:hover .stone,
+.person.on .stone {
+  rotate: 0deg;
+}
+
+.who {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .person strong {
   font-size: 1rem;
   font-weight: 650;
@@ -662,7 +726,7 @@ kbd {
   color: var(--ink-hover);
 }
 
-.person > span {
+.who > span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -686,6 +750,11 @@ kbd {
 
 .empty p {
   text-wrap: pretty;
+}
+
+.empty svg {
+  display: block;
+  margin: 6px 0 14px;
 }
 
 .empty strong {
@@ -928,6 +997,16 @@ textarea:read-only {
 .marker:hover .dot,
 .marker:focus-visible .dot {
   animation: pop 0.45s ease;
+}
+
+/* The ring hugs the dot so it never crosses the city's name. */
+.marker:focus-visible {
+  outline: 0;
+}
+
+.marker:focus-visible .dot {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
 }
 
 .marker:active .dot {

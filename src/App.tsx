@@ -174,12 +174,7 @@ export default function App() {
   return (
     <div className={`app ${selected ? 'has-profile' : ''}`} style={{ '--shift': selected ? '-10px' : '0px' } as CSSProperties}>
       <header className="top">
-        {/* Three stacked stones; the top one is the newest, still honey-gold. */}
-        <svg viewBox="0 0 64 64" width="30" height="30" stroke="var(--ink)" strokeWidth="3.4" aria-hidden="true">
-          <ellipse cx="32" cy="48" rx="21" ry="8" fill="var(--surface)" />
-          <ellipse cx="29" cy="31" rx="14.5" ry="7" fill="var(--surface)" transform="rotate(-4 29 31)" />
-          <ellipse cx="34" cy="15" rx="8" ry="6" fill="var(--honey)" transform="rotate(5 34 15)" />
-        </svg>
+        <Cairn />
         <strong>Cairn</strong>
         <span>Georgia Tech alumni</span>
       </header>
@@ -197,7 +192,7 @@ export default function App() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && remember()}
-              placeholder="Try “founders in Atlanta open to a chat”"
+              placeholder={window.innerWidth <= 900 ? 'Try “founders in Atlanta”' : 'Try “founders in Atlanta open to a chat”'}
               aria-label="Search alumni"
             />
             {query ? (
@@ -289,6 +284,13 @@ export default function App() {
           </div>
         ) : !hits.length ? (
           <div className="scroll empty">
+            {/* A cairn that has come apart: nothing to follow this way. */}
+            <svg viewBox="0 0 120 56" width="120" height="56" stroke="var(--ink)" strokeWidth="2.2" aria-hidden="true">
+              <path d="M6 50h108" fill="none" strokeLinecap="round" strokeDasharray="1 7" />
+              <ellipse cx="44" cy="42" rx="24" ry="8" fill="var(--surface)" />
+              <ellipse cx="82" cy="40" rx="15" ry="7" fill="var(--surface)" transform="rotate(24 82 40)" />
+              <ellipse cx="103" cy="45" rx="8" ry="5.5" fill="var(--honey)" transform="rotate(-18 103 45)" />
+            </svg>
             <strong>No one matches “{q}”</strong>
             <p>
               Try a place, a company or a field, such as{' '}
@@ -397,18 +399,35 @@ function PersonRow({ hit, active, onClick }: { hit: Hit; active: boolean; onClic
   const link = shortConnection(p.id)
   return (
     <button className={`person ${active ? 'on' : ''}`} onClick={onClick} aria-current={active || undefined}>
-      <span className="line">
-        <strong>{p.name}</strong>
-        <Degree id={p.id} />
+      {/* Each person is a stone with their initial; honey if you already share something. */}
+      <span className={`stone ${degree(p.id) === 1 ? 'near' : ''}`} aria-hidden="true">
+        {p.name[0]}
       </span>
-      <span>
-        {p.role} · {p.company}
-      </span>
-      <span className="quiet">
-        {p.city} · {classOf(p)}
-        {link && ` · ${link}`}
+      <span className="who">
+        <span className="line">
+          <strong>{p.name}</strong>
+          <Degree id={p.id} />
+        </span>
+        <span>
+          {p.role} · {p.company}
+        </span>
+        <span className="quiet">
+          {p.city} · {classOf(p)}
+          {link && ` · ${link}`}
+        </span>
       </span>
     </button>
+  )
+}
+
+// The mark: three stacked stones. The top one is the newest, still honey-gold.
+function Cairn({ size = 30 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 64 64" width={size} height={size} stroke="currentColor" strokeWidth="3.4" aria-hidden="true">
+      <ellipse cx="32" cy="48" rx="21" ry="8" fill="var(--surface)" />
+      <ellipse cx="29" cy="31" rx="14.5" ry="7" fill="var(--surface)" transform="rotate(-4 29 31)" />
+      <ellipse cx="34" cy="15" rx="8" ry="6" fill="var(--honey)" transform="rotate(5 34 15)" />
+    </svg>
   )
 }
 
@@ -548,7 +567,7 @@ function Profile({
           <button className={`btn primary ${sent ? 'sent' : ''}`} disabled={sent || blocked} onClick={onSend}>
             {sent ? (
               <>
-                <Check size={16} aria-hidden="true" /> Marked as sent
+                <Cairn size={20} /> Marked as sent
               </>
             ) : (
               'Send note'
